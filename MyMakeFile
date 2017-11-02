@@ -1,0 +1,13 @@
+all: hello
+
+hello: main.o auth.o
+	gcc main.o auth.o -o hello
+
+main.o: main.c
+	gcc -c main.c
+
+auth.o: auth.c
+	gcc -c auth.c
+
+clean:
+	rm -rf *.o hello
